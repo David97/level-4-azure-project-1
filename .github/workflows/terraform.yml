@@ -78,8 +78,7 @@ jobs:
     - name: Terraform Init
       uses: webfactory/ssh-agent@v0.9.0
       with:
-          ssh-private-key: |
-                ${{ secrets.DAVID97_PRIVATE_KEY }}
+          ssh-private-key: ${{ secrets.DAVID97_PRIVATE_KEY }}
       run: terraform init
 
     # Checks that all Terraform configuration files adhere to a canonical format
