@@ -68,6 +68,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
+    - name: 'Log into Azure using github secret AZURE_CREDENTIALS'
+      uses: Azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        enable-AzPSSession: true
+
     - name: Load SSH Key to git clone module
       uses: webfactory/ssh-agent@v0.9.0
       with:

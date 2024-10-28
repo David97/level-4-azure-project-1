@@ -1,11 +1,4 @@
 terraform {
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "3.102.0"
-    }
-  }
-
   backend "remote" {
     # The name of your Terraform Cloud organization.
     organization = "SoftwareOne"
