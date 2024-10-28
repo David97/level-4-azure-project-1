@@ -76,6 +76,10 @@ jobs:
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
+      uses: webfactory/ssh-agent@v0.9.0
+      with:
+          ssh-private-key: |
+                ${{ secrets.DAVID97_PRIVATE_KEY }}
       run: terraform init
 
     # Checks that all Terraform configuration files adhere to a canonical format
