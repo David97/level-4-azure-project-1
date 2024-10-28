@@ -4,14 +4,14 @@ module "resource_group" {
   resource_groups = [
     {
       location = "eastasia"
-      name     = "test-henry-2"
+      name     = "test-henry-3"
       tags = {
         "Name" = "Test Henry"
       }
     },
     {
       location = "eastasia"
-      name     = "test-swo-2"
+      name     = "test-swo-3"
       tags = {
         "Name" = "Test SWO"
       }
