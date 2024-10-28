@@ -5,7 +5,7 @@ terraform {
     container_name       = "hkjc-landing-zone-tf-state"
     key                  = "non-prod/terraform.tfstate"
 
-    cloud {
+    backend "remote" {
       # The name of your Terraform Cloud organization.
       organization = "SoftwareOne"
 
