@@ -2,5 +2,5 @@ provider "azurerm" {
   features {}
 }
 
-provider "azapi" {
-}
+# provider "azapi" {
+# }
