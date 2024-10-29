@@ -48,7 +48,7 @@ on:
   push:
     branches: [ "feature/*" ]
   pull_request:
-    branches: [ "feature/*" ]
+    branches: [ "main", "feature/*" ]
 
 permissions:
   contents: read
@@ -97,4 +97,3 @@ jobs:
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main'
       run: terraform apply -auto-approve -input=false
-
