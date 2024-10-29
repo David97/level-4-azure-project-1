@@ -18,3 +18,4 @@ module "resource_group" {
     }
   ]
 }
+
