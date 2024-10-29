@@ -48,8 +48,7 @@ on:
   push:
     branches: [ "main", "feature/*" ]
   pull_request:
-    branches: [ "main" ]
-    branches-ignore: [ "feature/*" ]
+    branches: [ "main", "!feature/*" ]
 
 permissions:
   contents: read
