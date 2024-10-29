@@ -46,8 +46,9 @@ name: 'Terraform'
 
 on:
   push:
-    branches: [ "feature/*" ]
+    branches: [ "main", "feature/*" ]
   pull_request:
+    branches: [ "main" ]
 
 permissions:
   contents: read
@@ -68,15 +69,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: 'Log into Azure using github secret AZURE_CREDENTIALS'
-      uses: Azure/login@v2
-      env:
-        AZURE_LOGIN_PRE_CLEANUP: true
-        AZURE_LOGIN_POST_CLEANUP: true
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-    - name: Load SSH Key to git clone terraform module monorepo
+    - name: Load SSH Key to git clone module
       uses: webfactory/ssh-agent@v0.9.0
       with:
           ssh-private-key: ${{ secrets.DAVID97_PRIVATE_KEY }}
@@ -102,5 +95,5 @@ jobs:
       # On push to "main", build or change infrastructure according to Terraform configuration files
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
     - name: Terraform Apply
-      if: github.ref == 'refs/heads/"main"' && github.event_name == 'pull_request'
+      if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
       run: terraform apply -auto-approve -input=false
