@@ -68,7 +68,15 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Load SSH Key to git clone module
+    - name: 'Log into Azure using github secret AZURE_CREDENTIALS'
+      uses: Azure/login@v2
+      env:
+        AZURE_LOGIN_PRE_CLEANUP: true
+        AZURE_LOGIN_POST_CLEANUP: true
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Load SSH Key to git clone terraform module monorepo
       uses: webfactory/ssh-agent@v0.9.0
       with:
           ssh-private-key: ${{ secrets.DAVID97_PRIVATE_KEY }}
