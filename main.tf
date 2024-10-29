@@ -1,4 +1,10 @@
 terraform {
+  required_providers {
+    azapi = {
+      source = "azure/azapi"
+    }
+  }
+
   backend "remote" {
     # The name of your Terraform Cloud organization.
     organization = "SoftwareOne"
