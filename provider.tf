@@ -1,6 +1,6 @@
 provider "azurerm" {
+  skip_provider_registration = true
   features {}
-  use_cli = false
 }
 
 provider "azapi" {
