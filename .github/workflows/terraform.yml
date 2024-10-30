@@ -56,7 +56,7 @@ jobs:
   terraform:
     name: 'Terraform'
     runs-on:
-      group: default
+      group: Default
       labels: self-hosted
     environment: POC
 
