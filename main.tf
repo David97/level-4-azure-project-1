@@ -13,7 +13,7 @@ terraform {
 
     # The name of the Terraform Cloud workspace to store Terraform state files in.
     workspaces {
-      name = "azure-project-1"
+      name = "level-4-azure-project-1"
     }
   }
 }
