@@ -63,6 +63,8 @@ jobs:
       run:
         shell: bash
 
+    runs-on: self-hosted
+
     steps:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
