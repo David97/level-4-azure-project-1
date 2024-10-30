@@ -55,15 +55,13 @@ permissions:
 jobs:
   terraform:
     name: 'Terraform'
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     environment: POC
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
       run:
         shell: bash
-
-    runs-on: self-hosted
 
     steps:
     # Checkout the repository to the GitHub Actions runner
