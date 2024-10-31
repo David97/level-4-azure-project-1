@@ -1,5 +1,5 @@
 module "resource_group" {
-  source = "git@github.com:David97/azure-terraform-module-monorepo.git//base/resource-group?ref=v1.0.5"
+  source = "git@github.com:David97/azure-terraform-module-monorepo.git//base/resource-group?ref=feature/new-task"
 
   resource_groups = [
     {
